@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 5px;
+        }
+        label, p {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], input[type="password"],
+        input[type="tel"], input[type="url"], input[type="date"], input[type="time"],
+        input[type="number"], select, textarea {
+            width: 98%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .gender-group, .hobbies-group {
+            margin-bottom: 10px;
+        }
+        .gender-group label, .hobbies-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/register" method="post">
+        <h2>Registration Form</h2>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="website">Personal Website URL:</label>
+            <input type="url" id="website" name="website">
+        </fieldset>
+
+        <fieldset>
+            <legend>Account Details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" list="commonUsernames">
+            <datalist id="commonUsernames">
+                <option value="user123">
+                <option value="guest_user">
+                <option value="newbie_coder">
+            </datalist>
+
+            <label for="birthdate">Date of Birth:</label>
+            <input type="date" id="birthdate" name="birthdate">
+
+            <label for="appointmentTime">Preferred Appointment Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime">
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <div class="gender-group">
+                <p>Gender:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </div>
+
+            <div class="hobbies-group">
+                <p>Hobbies (select all that apply):</p>
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading">Reading</label>
+                <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+                <label for="gaming">Gaming</label>
+                <input type="checkbox" id="coding" name="hobbies" value="coding">
+                <label for="coding">Coding</label>
+            </div>
+
+            <label for="favoriteColor">Favorite Color:</label>
+            <input type="color" id="favoriteColor" name="favoriteColor">
+            
+            <label for="satisfaction">Satisfaction Level:</label>
+            <input type="range" id="satisfaction" name="satisfaction" min="0" max="100" value="50">
+
+            <label for="userType">Account Type:</label>
+            <select id="userType" name="userType">
+                <option value="basic">Basic</option>
+                <option value="premium">Premium</option>
+                <option value="enterprise">Enterprise</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="profilePicture">Upload Profile Picture:</label>
+            <input type="file" id="profilePicture" name="profilePicture">
+
+            <label for="bio">Short Bio:</label>
+            <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Tell us about yourself..."></textarea>
+        </fieldset>
+
+        <button type="submit" class="submit-button">Register</button>
+    </form>
+
+</body>
+</html>
